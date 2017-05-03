@@ -1,0 +1,51 @@
+﻿@model PractMVC.Models.Employee
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmpName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmpName)
+            @Html.ValidationMessageFor(model => model.EmpName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.doj)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.doj)
+            @Html.ValidationMessageFor(model => model.doj)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dep)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dep)
+            @Html.ValidationMessageFor(model => model.dep)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
